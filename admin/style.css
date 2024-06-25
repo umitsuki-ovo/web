@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+}
+.icon {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+.menu-container {
+    display: flex;
+    gap: 15px;
+}
+.menu {
+    color: white;
+    text-decoration: none;
+}
+.login {
+    position: relative;
+}
+.user-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 150px;
+}
+.user-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+.user-menu a:hover {
+    background-color: #f0f0f0;
+}

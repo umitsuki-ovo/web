@@ -1,0 +1,2850 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <title>command一覧</title>
+    <meta name="description"  content="マイクラのコマンド一覧です。">
+    <meta name="keywords" content="マイクラ,コマンド,一覧,統合版,java版,解説">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="../root.css">
+    <link rel="stylesheet" type="text/css" href="command.css">
+</head>
+
+<body>
+<div class="content">
+<h2 class="top">マイクラのコマンドをすべて紹介しています！</h2>
+
+<div class="text-area">
+    <p>※統合版: 1.20.00まで</p>
+    <p>※java版: 1.20.00まで</p>
+    <a>統合版一覧はこちら</a><br/>
+    <a>java版一覧はこちら</a>
+
+    <div class="toc">
+        <p class="toc-title">■目次</p>
+        <ol>
+            <li class="toc-text"><a href="#">/?                   　コマンドのヘルプ/一覧を呼び出す</a></li>
+            <li class="toc-text"><a href="#">/advancement         　進捗を操作する</a></li>
+            <li class="toc-text"><a href="#">/alwaysday           　昼夜サイクルを停止/再開する</a></li>
+            <li class="toc-text"><a href="#">/attribute           　モブの操作</a></li>
+            <li class="toc-text"><a href="#">/bossbar             　ボスの体力バーを表示</a></li>
+            <li class="toc-text"><a href="#">/camera              　画面の設定</a></li>
+            <li class="toc-text"><a href="#">/camerashake         　視線をゆらす</a></li>
+            <li class="toc-text"><a href="#">/clear               　アイテムを削除する</a></li>
+            <li class="toc-text"><a href="#">/clearspawnpoint     　スポーン地点を削除する</a></li>
+            <li class="toc-text"><a href="#">/clone               　ブロックを複製する</a></li>
+            <li class="toc-text"><a href="#">/connect             　外部サーバーに接続する</a></li>
+            <li class="toc-text"><a href="#">/damage              　ダメージをあたえる</a></li>
+            <li class="toc-text"><a href="#">/data                　NBTタグを操作する</a></li>
+            <li class="toc-text"><a href="#">/datapack            　データパックのON・OFF</a></li>
+            <li class="toc-text"><a href="#">/daylock             　昼夜サイクルを停止する</a></li>
+            <li class="toc-text"><a href="#">/debug               　デバッグの開始・停止</a></li>
+            <li class="toc-text"><a href="#">/defaultgamemode     　デフォルトゲームモードの設定</a></li>
+            <li class="toc-text"><a href="#">/deop                　オペレータ権限の削除</a></li>
+            <li class="toc-text"><a href="#">/dialogue            　NPCダイアログを表示する</a></li>
+            <li class="toc-text"><a href="#">/difficulty          　難易度を変える</a></li>
+            <li class="toc-text"><a href="#">/effect              　ステータス効果の付与・削除</a></li>
+            <li class="toc-text"><a href="#">/enchant             　アイテムをエンチャントする</a></li>
+            <li class="toc-text"><a href="#">/event               　モブにイベントをおこす</a></li>
+            <li class="toc-text"><a href="#">/execute             　高度なコマンドを実行する</a></li>
+            <li class="toc-text"><a href="#">/experience          　経験値をあたえる</a></li>
+            <li class="toc-text"><a href="#">/fill                　ブロックで満たす</a></li>
+            <li class="toc-text"><a href="#">/fillbiome           　バイオームの上書き</a></li>
+            <li class="toc-text"><a href="#">/fog                 　霧を表示する</a></li>
+            <li class="toc-text"><a href="#">/forceload           　チャンクの常時読み込み</a></li>
+            <li class="toc-text"><a href="#">/function            　ファンクションでコマンド実行</a></li>
+            <li class="toc-text"><a href="#">/gamemode            　ゲームモードの変更</a></li>
+            <li class="toc-text"><a href="#">/gamerule            　ゲームルールの変更</a></li>
+            <li class="toc-text"><a href="#">/gametest            　ゲームテストの実行</a></li>
+            <li class="toc-text"><a href="#">/give                　アイテムをあたえる</a></li>
+            <li class="toc-text"><a href="#">/help                　コマンドの構文を調べる</a></li>
+            <li class="toc-text"><a href="#">/inputpermission     　入力許可</a></li>
+            <li class="toc-text"><a href="#">/item                　アイテムの操作</a></li>
+            <li class="toc-text"><a href="#">/jfr                 　JFRプロファイリングの操作</a></li>
+            <li class="toc-text"><a href="#">/kick                　強制ログアウト</a></li>
+            <li class="toc-text"><a href="#">/kill                　エンティティを消滅させる</a></li>
+            <li class="toc-text"><a href="#">/list                　プレイヤーリストの表示</a></li>
+            <li class="toc-text"><a href="#">/locate              　構造物などの座標を表示する</a></li>
+            <li class="toc-text"><a href="#">/loot                　ルートテーブルを使う</a></li>
+            <li class="toc-text"><a href="#">/me                  　メッセージを表示する</a></li>
+            <li class="toc-text"><a href="#">/mobevent            　モブイベントを操作する</a></li>
+            <li class="toc-text"><a href="#">/msg                 　メッセージを送信する</a></li>
+            <li class="toc-text"><a href="#">/music               　ゲーム音楽の操作</a></li>
+            <li class="toc-text"><a href="#">/op                  　オペレータ権限をあたえる</a></li>
+            <li class="toc-text"><a href="#">/particle            　パーティクルを表示する</a></li>
+            <li class="toc-text"><a href="#">/place               　構造物などを生成する</a></li>
+            <li class="toc-text"><a href="#">/playanimation       　エンティティのアニメーションを操作</a></li>
+            <li class="toc-text"><a href="#">/playsound           　効果音をならす</a></li>
+            <li class="toc-text"><a href="#">/publish             　ワールドをLANに公開</a></li>
+            <li class="toc-text"><a href="#">/random              　ランダム</a></li>
+            <li class="toc-text"><a href="#">/recipe              　レシピを開放・ロックする</a></li>
+            <li class="toc-text"><a href="#">/reload              　ファンクションなどの再読み込み</a></li>
+            <li class="toc-text"><a href="#">/replaceitem         　アイテムを置き換える</a></li>
+            <li class="toc-text"><a href="#">/return              　戻る</a></li>
+            <li class="toc-text"><a href="#">/ride                　エンティティを乗せる</a></li>
+            <li class="toc-text"><a href="#">/say                 　メッセージを送信する</a></li>
+            <li class="toc-text"><a href="#">/schedule            　ファンクションを遅れて実行</a></li>
+            <li class="toc-text"><a href="#">/scoreboard          　プレイヤーやモブの行動をカウント</a></li>
+            <li class="toc-text"><a href="#">/script              　スクリプト</a></li>
+            <li class="toc-text"><a href="#">/scriptevent         　スクリプトイベント</a></li>
+            <li class="toc-text"><a href="#">/seed                　シード値の表示</a></li>
+            <li class="toc-text"><a href="#">/setblock            　ブロックを設置する</a></li>
+            <li class="toc-text"><a href="#">/setmaxplayers       　最大人数を設定する</a></li>
+            <li class="toc-text"><a href="#">/setworldspawn       　ワールドのスポーン地点の設定</a></li>
+            <li class="toc-text"><a href="#">/spawnpoint          　プレイヤーのスポーン地点の設定</a></li>
+            <li class="toc-text"><a href="#">/spectate            　エンティティにとりつかせる</a></li>
+            <li class="toc-text"><a href="#">/spreadplayers       　エンティティを拡散させる</a></li>
+            <li class="toc-text"><a href="#">/stopsound           　ゲーム音をとめる</a></li>
+            <li class="toc-text"><a href="#">/structure           　構造物の保存・ロード</a></li>
+            <li class="toc-text"><a href="#">/summon              　エンティティを召喚する</a></li>
+            <li class="toc-text"><a href="#">/tag                 　エンティティにタグをつける</a></li>
+            <li class="toc-text"><a href="#">/team                　チームの操作</a></li>
+            <li class="toc-text"><a href="#">/teammsg             　チームメッセージを送信する</a></li>
+            <li class="toc-text"><a href="#">/teleport            　エンティティをテレポートさせる</a></li>
+            <li class="toc-text"><a href="#">/tell                　メッセージを送信する</a></li>
+            <li class="toc-text"><a href="#">/tellraw             　JSON形式のメッセージを送信</a></li>
+            <li class="toc-text"><a href="#">/testfor             　エンティティをカウントする</a></li>
+            <li class="toc-text"><a href="#">/testforblock        　ブロックがあるか調べる</a></li>
+            <li class="toc-text"><a href="#">/testforblocks       　ブロックを比較する</a></li>
+            <li class="toc-text"><a href="#">/tick                　ティック</a></li>
+            <li class="toc-text"><a href="#">/tickingarea         　つねにロードする範囲を作る</a></li>
+            <li class="toc-text"><a href="#">/time                　時間を変更する</a></li>
+            <li class="toc-text"><a href="#">/title               　画面にテキストを表示する</a></li>
+            <li class="toc-text"><a href="#">/titleraw            　JSON形式でタイトルを表示する</a></li>
+            <li class="toc-text"><a href="#">/tm                  　チームメッセージを送信する</a></li>
+            <li class="toc-text"><a href="#">/toggledownfall      　天気を変える</a></li>
+            <li class="toc-text"><a href="#">/tp                  　エンティティをテレポートさせる</a></li>
+            <li class="toc-text"><a href="#">/trigger             　スコアボードの値を変更する</a></li>
+            <li class="toc-text"><a href="#">/w                   　メッセージを送信する</a></li>
+            <li class="toc-text"><a href="#">/weather             　天気を設定する</a></li>
+            <li class="toc-text"><a href="#">/worldborder         　ワールドの境界線を設定する</a></li>
+            <li class="toc-text"><a href="#">/wsserver            　サーバーに接続する</a></li>
+            <li class="toc-text"><a href="#">/xp                  　経験値の追加・削除</a></li>
+
+        </ol>
+    </div>
+
+    <ul class="main">
+        <li>
+            <section>
+                <h3 class="title">/?　コマンドのヘルプ/一覧を呼び出す</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td>/? &lt;commandname&gt;</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/advancement　進捗を操作する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td>/advancement &lt;commandname&gt;</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>java版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>なし</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/alwaysday 　昼夜サイクルを停止/再開する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td>/alwaysday &lt;true/false&gt;</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>昼夜の変化を停止または再開します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/attribute 　モブの操作</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>モブの属性やステータスを変更します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/bossbar 　ボスの体力バーを表示</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>ボスモブの体力バーを画面に表示します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/camera 　画面の設定</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>プレイヤーのカメラ設定を変更します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/camerashake 　視線をゆらす</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>画面を揺らしてエフェクトを与えます。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/clear 　アイテムを削除する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定したアイテムをインベントリから削除します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/clearspawnpoint 　スポーン地点を削除する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定したプレイヤーのスポーン地点を削除します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/clone 　ブロックを複製する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定した領域のブロックを複製します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/connect 　外部サーバーに接続する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>別のサーバーに接続します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/damage 　ダメージをあたえる</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>エンティティにダメージを与えます。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/data 　NBTタグを操作する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>エンティティやブロックのNBTタグを操作します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/datapack 　データパックのON・OFF</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>データパックを有効または無効にします。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/daylock 　昼夜サイクルを停止する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>昼夜の自然変化を停止します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/debug 　デバッグの開始・停止</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>デバッグモードを開始または停止します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/defaultgamemode 　デフォルトゲームモードの設定</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>新規プレイヤーのデフォルトのゲームモードを設定します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/deop 　オペレータ権限の削除</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定したプレイヤーのオペレータ権限を削除します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/dialogue 　NPCダイアログを表示する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>NPCとの対話を開始します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/difficulty 　難易度を変える</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>ゲームの難易度を設定します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/effect 　ステータス効果の付与・削除</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>プレイヤーやモブにステータス効果を与えたり削除します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/enchant 　アイテムをエンチャントする</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>アイテムにエンチャントを施します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/event 　モブにイベントをおこす</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>モブに特定のイベントを発生させます。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/execute 　高度なコマンドを実行する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>条件を満たす場合にコマンドを実行します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/experience 　経験値をあたえる</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>プレイヤーに経験値を与えます。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/fill 　ブロックで満たす</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定した領域をブロックで満たします。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/fillbiome 　バイオームの上書き</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定した領域のバイオームを上書きします。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/fog 　霧を表示する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>画面に霧を表示させます。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/forceload 　チャンクの常時読み込み</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定したチャンクを常に読み込み続けます。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/function 　ファンクションでコマンド実行</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定したファンクションを実行します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/gamemode 　ゲームモードの変更</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>プレイヤーのゲームモードを変更します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/gamerule 　ゲームルールの変更</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>ゲームのルールを変更します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/gametest 　ゲームテストの実行</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定したゲームテストを実行します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/give 　アイテムをあたえる</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>プレイヤーにアイテムを与えます。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/help 　コマンドの構文を調べる</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定したコマンドの使用方法や構文を調べます。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/inputpermission 　入力許可</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>プレイヤーのコマンド入力の許可または禁止を設定します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/item 　アイテムの操作</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>プレイヤーのインベントリ内のアイテムを操作します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/jfr 　JFRプロファイリングの操作</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>Java Flight Recorderのプロファイリングを操作します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/kick 　強制ログアウト</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>サーバーから指定したプレイヤーを強制的にログアウトさせます。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/kill 　エンティティを消滅させる</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定したエンティティを消滅させます。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/list 　プレイヤーリストの表示</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>現在接続しているプレイヤーのリストを表示します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/locate 　構造物などの座標を表示する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定した構造物などの座標を表示します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/loot 　ルートテーブルを使う</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定したルートテーブルからアイテムを取得します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/me 　メッセージを表示する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>プレイヤーの行動を他のプレイヤーに伝えます。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/mobevent 　モブイベントを操作する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>モブイベントの設定や操作を行います。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/msg 　メッセージを送信する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>プレイヤーに直接メッセージを送信します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/music 　ゲーム音楽の操作</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>ゲーム内の音楽の操作を行います。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/op 　オペレータ権限をあたえる</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定したプレイヤーにオペレータ権限を付与します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/particle 　パーティクルを表示する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定した場所にパーティクルエフェクトを表示します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/place 　構造物などを生成する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定した構造物などを生成します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/playanimation 　エンティティのアニメーションを操作</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定したエンティティのアニメーションを操作します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/playsound 　効果音をならす</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定した効果音を再生します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/publish 　ワールドをLANに公開</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>ワールドをLAN上で公開します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/random 　ランダム</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>ランダムな動作やイベントを実行します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/recipe 　レシピを開放・ロックする</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定したレシピを開放またはロックします。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/reload 　ファンクションなどの再読み込み</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>データパックやファンクションを再読み込みします。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/replaceitem 　アイテムを置き換える</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定したスロットのアイテムを置き換えます。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/return 　戻る</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>前の操作や場所に戻ります。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/ride 　エンティティを乗せる</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定したエンティティに乗るように設定します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/say 　メッセージを送信する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>サーバー上にメッセージを送信します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/schedule 　ファンクションを遅れて実行</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定した時間後にファンクションを実行します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/scoreboard 　プレイヤーやモブの行動をカウント</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>スコアボードを使用してプレイヤーやモブの行動をカウントします。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/script 　スクリプト</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>スクリプトを実行または管理します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/scriptevent 　スクリプトイベント</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>スクリプトによるイベントを管理します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/seed 　シード値の表示</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>現在のワールドのシード値を表示します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/setblock 　ブロックを設置する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定した位置にブロックを設置します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/setmaxplayers 　最大人数を設定する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>サーバーに同時接続可能な最大プレイヤー数を設定します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/setworldspawn 　ワールドのスポーン地点の設定</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>新たなワールドのスポーン地点を設定します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/spawnpoint 　プレイヤーのスポーン地点の設定</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定したプレイヤーのスポーン地点を設定します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/spectate 　エンティティにとりつかせる</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定したエンティティを視点として見ることができるようにします。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/spreadplayers 　エンティティを拡散させる</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定した範囲内でエンティティをランダムに配置します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/stopsound 　ゲーム音をとめる</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定したプレイヤーの指定したサウンドを停止します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/structure 　構造物の保存・ロード</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定した構造物の保存やロードを行います。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/summon 　エンティティを召喚する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定したエンティティを召喚します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/tag 　エンティティにタグをつける</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定したエンティティにタグを付けたり削除したりします。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/team 　チームの操作</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>プレイヤーチームの操作を行います。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/teammsg 　チームメッセージを送信する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>チーム内のメンバーにメッセージを送信します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/teleport 　エンティティをテレポートさせる</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定したエンティティを別の場所に瞬時に移動させます。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/tell 　メッセージを送信する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>プレイヤーにメッセージを送信します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/tellraw 　JSON形式のメッセージを送信</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>JSON形式でフォーマットされたメッセージを送信します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/testfor 　エンティティをカウントする</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定した条件に合致するエンティティをカウントします。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/testforblock 　ブロックがあるか調べる</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定した位置に特定のブロックが存在するか確認します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/testforblocks 　ブロックを比較する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>2つの領域のブロックの内容を比較します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/tick 　ティック</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>1ゲームの周期の単位でのタスクの実行を制御します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/tickingarea 　つねにロードする範囲を作る</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定した範囲を常に読み込まれたままにします。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/time 　時間を変更する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>ワールド内の時間を変更します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/title 　画面にテキストを表示する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>プレイヤーの画面にテキストを表示します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/titleraw 　JSON形式でタイトルを表示する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>JSON形式でフォーマットされたテキストをプレイヤーの画面に表示します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/tm 　チームメッセージを送信する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>チーム内のメンバーにメッセージを送信します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/toggledownfall 　天気を変える</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>雨や雪を切り替えて制御します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/tp 　エンティティをテレポートさせる</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>指定したエンティティを別の場所に瞬時に移動させます。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/trigger 　スコアボードの値を変更する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>プレイヤーのトリガースコアを変更します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/w 　メッセージを送信する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>プレイヤーにメッセージを送信します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/weather 　天気を設定する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>ワールド内の天候を設定します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/worldborder 　ワールドの境界線を設定する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>ワールドの境界線の設定を行います。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/wsserver 　サーバーに接続する</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>別のサーバーに接続します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h3 class="title">/xp 　経験値の追加・削除</h3>
+                <div class="box">
+                    <p>役割紹介</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="exp">コマンド記述例</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="exp">実行内容</td>
+                                <td>プレイヤーの経験値を追加または削除します。</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">対応エディション</td>
+                                <td>統合版</td>
+                            </tr>
+                            <tr>
+                                <td class="exp">置き換え可能コマンド</td>
+                                <td>/help</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </li>
+    </ul>
+    
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="command.js"></script>
+</body>
+</html>
