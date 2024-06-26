@@ -1,10 +1,11 @@
-from flask import Flask, session, redirect, url_for, render_template_string
+from flask import Flask, session, redirect, url_for, render_template
 from flask_sqlalchemy import SQLAlchemy
 import secrets
 from flask_mail import Mail
+import sys
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='html', template_folder='html')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SECRET_KEY'] = secrets.token_hex(16)
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
@@ -27,6 +28,12 @@ class User(db.Model):
 def create_tables():
     db.create_all()
 
+@app.route('/')
+def run():
+    return render_template('index.html')
+
+sys.path.append(os.path.join(os.path.dirname(__file__), 'html/auth/app'))
+
 from signup import signup_bp
 from login import login_bp
 from pass_reset import pass_reset_bp
@@ -35,5 +42,8 @@ app.register_blueprint(signup_bp)
 app.register_blueprint(login_bp)
 app.register_blueprint(pass_reset_bp)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
+# not pythonanyware
+
+#if __name__ == '__main__':
+#    app.run(debug=True)
