@@ -1,14 +1,19 @@
-from flask import Blueprint, request, jsonify, session, redirect, url_for
+from flask import Blueprint, request, jsonify, session, redirect, url_for, render_template
 from werkzeug.security import check_password_hash
+import sys
+import os
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '../../../..'))
+
+
 from app import User
 
 login_bp = Blueprint('login', __name__)
 
 @login_bp.route('/login', methods=['POST'])
 def login():
-    data = request.get_json()
-    username = data['username']
-    password = data['password']
+    username = request.form.get('username')
+    password = request.form.get('password')
     user = User.query.filter_by(username=username).first()
     if user and check_password_hash(user.password_hash, password):
         if user.confirmed:
@@ -25,4 +30,4 @@ def login():
     
 @login_bp.route('/login_page')
 def login_page():
-    return render_template('../login.php')
+    return render_template('./auth/login.php')
