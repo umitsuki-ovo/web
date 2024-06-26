@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         ),
     );
     $context  = stream_context_create($options);
-    $result = file_get_contents('http://127.0.0.1:5000/login', false, $context);
+    $result = file_get_contents('http://****/login', false, $context);
     
     if ($result === FALSE) { 
         echo 'Error connecting to server.';
@@ -25,6 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($response['message'])) {
             echo $response['message'];
             if (isset($response['redirect_url'])) {
+                echo '<script>';
+                echo 'setTimeout(function() { window.location.href = "' . $response['redirect_url'] . '"; }, 10000);';
+                echo '</script>';
                 header('Location: ' . $response['redirect_url']);
                 exit();
             }
