@@ -28,7 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo '<script>';
                 echo 'setTimeout(function() { window.location.href = "' . $response['redirect_url'] . '"; }, 10000);';
                 echo '</script>';
-                header('Location: ' . $response['redirect_url']);
                 exit();
             }
         }
