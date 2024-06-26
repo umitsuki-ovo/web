@@ -1,16 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Login</title>
-</head>
-<body>
-    <h2>Login</h2>
-    <form action="login_app.php" method="post">
+{% extends "template.html" %}
+
+
+{% block title %}
+Login
+{% endblock  %}
+
+
+{% block files %}
+
+{% endblock  %}
+    
+
+{% block content %}
+<h2>Login</h2>
+    <form action="{{url_for('login.login')}}" method="post">
         <label for="username">Username:</label><br>
         <input type="text" id="username" name="username" required><br><br>
         <label for="password">Password:</label><br>
         <input type="password" id="password" name="password" required><br><br>
         <input type="submit" value="Login">
     </form>
-</body>
-</html>
+{% endblock  %}
