@@ -20,13 +20,13 @@ def login():
             session['user_id'] = user.id
             session['role'] = user.role
             if user.role == 'admin':
-                return jsonify({'message': 'Login successful.', 'redirect_url': '../../admin/admin_index.php'}), 200
+                return jsonify({'message': 'Login successful.', 'p': 'Redirect user page. Wait a minute.', 'redirect_url': '../../admin/admin_index.php'}), 200
             else:
-                return jsonify({'message': 'Login successful.', 'redirect_url': '../../user/user_index.php'}), 200
+                return jsonify({'message': 'Login successful.', 'p': 'Redirect user page. Wait a minute.', 'redirect_url': '../../user/user_index.php'}), 200
         else:
-            return jsonify({'message': 'Please confirm your email address.'}), 401
+            return jsonify({'message': 'Please confirm your email address.', 'p': 'Please go back to the page and re-enter your email address.'}), 401
     else:
-        return jsonify({'message': 'Invalid username or password.'}), 401
+        return jsonify({'message': 'Invalid username or password.', 'p': 'Please go back to the page and re-enter your username or password.'}), 401
     
 @login_bp.route('/login_page')
 def login_page():
