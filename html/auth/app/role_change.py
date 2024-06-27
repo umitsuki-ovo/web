@@ -11,9 +11,8 @@ admin_bp = Blueprint('admin', __name__)
 
 @admin_bp.route('/change_role', methods=['POST'])
 def change_role():
-    data = request.get_json()
-    username = data['username']
-    new_role = data['role']
+    username = request.form.get('username')
+    new_role = request.form.get('role')
     
     if new_role not in ['user', 'admin']:
         return jsonify({'message': 'Invalid role. Must be "user" or "admin".'}), 400
