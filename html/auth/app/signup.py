@@ -15,10 +15,9 @@ s = URLSafeTimedSerializer(app.config['SECRET_KEY'])
 
 @signup_bp.route('/signup', methods=['POST'])
 def signup():
-    data = request.get_json()
-    username = data['username']
-    email = data['email']
-    password = data['password']
+    username = request.form.get('username')
+    email = request.form.get('email')
+    password = request.form.get('password')
     if not re.match(r'^[a-zA-Z0-9_]{3,150}$', username):
         return jsonify({'message': 'Invalid username. Must be 3-150 characters and contain only letters, numbers, and underscores.'}), 400
     if not re.match(r'^[A-Za-z0-9@#$%^&+=]{8,}$', password):
