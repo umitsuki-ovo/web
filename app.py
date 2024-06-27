@@ -43,7 +43,7 @@ app.register_blueprint(login_bp)
 app.register_blueprint(pass_reset_bp)
 
 
-# not pythonanyware
+# not pythonanywhere
 
 #if __name__ == '__main__':
 #    app.run(debug=True)
