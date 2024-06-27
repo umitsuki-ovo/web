@@ -11,7 +11,7 @@ from googleapiclient.discovery import build
 app = Flask(__name__, static_folder='html', template_folder='html')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SECRET_KEY'] = secrets.token_hex(16)
-app.config['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
+app.config['OAUTHLIB_INSECURE_TRANSPORT'] = '1' #開発用
 
 db = SQLAlchemy(app)
 
