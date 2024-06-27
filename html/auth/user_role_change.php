@@ -5,7 +5,7 @@
 </head>
 <body>
     <h2>Change User Role</h2>
-    <form action="change_role_app.php" method="post">
+    <form action="{{url_for('change_role.change_role')}}" method="post">
         <label for="username">Username:</label><br>
         <input type="text" id="username" name="username" required><br><br>
         <label for="role">Role:</label><br>
