@@ -23,6 +23,17 @@ class User(db.Model):
     confirmed = db.Column(db.Boolean, default=False)
     role = db.Column(db.String(50), default='user')
 
+def send_email(to, subject, body):
+    credentials = Credentials.from_authorized_user_file('credentials.json')
+    service = build('gmail', 'v1', credentials=credentials)
+    message = {
+        'raw': base64.urlsafe_b64encode(
+            f"To: {to}\r\nSubject: {subject}\r\n\r\n{body}".encode("utf-8")
+        ).decode("utf-8")
+    }
+    send_message = service.users().messages().send(userId="me", body=message).execute()
+    print(f'Message Id: {send_message["id"]}')
+
 @app.before_first_request
 def create_tables():
     db.create_all()
@@ -40,17 +51,6 @@ from pass_reset import pass_reset_bp
 app.register_blueprint(signup_bp)
 app.register_blueprint(login_bp)
 app.register_blueprint(pass_reset_bp)
-
-def send_email(to, subject, body):
-    credentials = Credentials.from_authorized_user_file('credentials.json')
-    service = build('gmail', 'v1', credentials=credentials)
-    message = {
-        'raw': base64.urlsafe_b64encode(
-            f"To: {to}\r\nSubject: {subject}\r\n\r\n{body}".encode("utf-8")
-        ).decode("utf-8")
-    }
-    send_message = service.users().messages().send(userId="me", body=message).execute()
-    print(f'Message Id: {send_message["id"]}')
 
 # if __name__ == '__main__':
 #     app.run(debug=True)
