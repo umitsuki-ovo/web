@@ -23,7 +23,7 @@
 </head>
 <body>
     <h2>Sign Up</h2>
-    <form action="signup_app.php" method="post" onsubmit="return validateForm()">
+    <form action="{{url_for('signup.signup')}}" method="post" onsubmit="return validateForm()">
         <label for="username">Username:</label><br>
         <input type="text" id="username" name="username" required><br><br>
         <label for="email">Email:</label><br>
