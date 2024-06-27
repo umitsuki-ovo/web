@@ -15,8 +15,7 @@ s = URLSafeTimedSerializer(app.config['SECRET_KEY'])
 
 @pass_reset_bp.route('/reset_password_request', methods=['POST'])
 def reset_password_request():
-    data = request.get_json()
-    email = data['email']
+    email = request.form.get('email')
     user = User.query.filter_by(email=email).first()
     if user:
         token = s.dumps(email, salt='password-reset')
@@ -40,9 +39,8 @@ def reset_password(token):
     except:
         return jsonify({'message': 'The password reset link is invalid or has expired.'}), 400
     if request.method == 'POST':
-        data = request.get_json()
-        password = data['password']
-        password_confirm = data['password_confirm']
+        password = request.form.get('password')
+        password_confirm = request.form.get('password_confirm')
         if password != password_confirm:
             return jsonify({'message': 'Passwords do not match.'}), 400
         user = User.query.filter_by(email=email).first_or_404()
