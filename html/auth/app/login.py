@@ -8,7 +8,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '../../../..'))
 
 from app import User
 
-login_bp = Blueprint('login', __name__)
+login_bp = Blueprint('login_request', __name__)
 
 @login_bp.route('/login_request', methods=['POST'])
 def login_request():
