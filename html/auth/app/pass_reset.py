@@ -35,7 +35,7 @@ def reset_password_request():
 @pass_reset_bp.route('/reset_password/<token>', methods=['GET', 'POST'])
 def reset_password(token):
     try:
-        email = s.loads(token, salt='password-reset', max_age=600)  # Token valid for 10 minutes
+        email = s.loads(token, salt='password-reset', max_age=600)
     except:
         return jsonify({'message': 'The password reset link is invalid or has expired.'}), 400
     if request.method == 'POST':
@@ -47,4 +47,8 @@ def reset_password(token):
         user.password_hash = generate_password_hash(password)
         db.session.commit()
         return jsonify({'message': 'Your password has been reset.'}), 200
+    return render_template('./auth/reset_password_request.php')
+
+@pass_reset_bp.route('/pass_reset')
+def pass_reset():
     return render_template('./auth/reset_password_request.php')
