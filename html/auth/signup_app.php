@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         ),
     );
     $context  = stream_context_create($options);
-    $result = file_get_contents('http://****/signup', false, $context);
+    $result = file_get_contents('http://****/signup_request', false, $context);
     
     if ($result === FALSE) { 
         echo 'Error connecting to server.';
