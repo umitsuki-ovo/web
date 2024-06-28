@@ -9,8 +9,8 @@ from app import app, db, User
 
 admin_bp = Blueprint('admin', __name__)
 
-@admin_bp.route('/change_role', methods=['POST'])
-def change_role():
+@admin_bp.route('/change_role_request', methods=['POST'])
+def change_role_request():
     username = request.form.get('username')
     new_role = request.form.get('role')
     
@@ -24,3 +24,7 @@ def change_role():
     user.role = new_role
     db.session.commit()
     return jsonify({'message': f'User {username} role changed to {new_role}.'}), 200
+
+@admin_bp.route('/change_role')
+def change_role():
+    return render_template('./auth/user_role_change.php')
