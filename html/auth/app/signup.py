@@ -41,7 +41,7 @@ def signup():
     <p><a href="{confirm_url}">Confirm your email address</a></p>
     <p>If you did not sign up for this account, please ignore this email.</p>
     '''
-    msg = Message('Confirm your account', sender=os.environ.get('MAIL_USERNAME'), recipients=[email])
+    msg = Message('Confirm your account', sender=app.config['MAIL_USERNAME'], recipients=[email])
     msg.html = html
     mail.send(msg)
     return jsonify({'message': 'A confirmation email has been sent.'}), 201
@@ -60,3 +60,8 @@ def confirm_email(token):
         db.session.add(user)
         db.session.commit()
         return jsonify({'message': 'You have confirmed your account. Thanks!'}), 200
+
+        
+@login_bp.route('/signup_page')
+def signup_page():
+    return render_template('./auth/signup.php')
