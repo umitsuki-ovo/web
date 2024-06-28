@@ -1,3 +1,23 @@
-{% block files %}{% endblock %}
-
-{% block content %}{% endblock %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='root.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    {% block files %}{% endblock %}
+</head>
+<body>
+    <header>
+        <a href="#"class="icon">アイコン</a>
+        <div class="menu-container">
+            <a href="#" class="menu">メニュー1</a>
+            <a href="#" class="menu">メニュー2</a>
+        </div>
+        <a href="./auth/login.php" class="login">ログイン</a>
+        <a href="./auth/signup.php" class="login">サインアップ</a>
+    </header>
+    {% block content %}{% endblock %}
+</body>
+</html>
