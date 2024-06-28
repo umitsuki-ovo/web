@@ -11,7 +11,7 @@ from app import User
 login_bp = Blueprint('login', __name__)
 
 @login_bp.route('/login_request', methods=['POST'])
-def login():
+def login_request():
     username = request.form.get('username')
     password = request.form.get('password')
     user = User.query.filter_by(username=username).first()
@@ -29,5 +29,5 @@ def login():
         return jsonify({'message': 'Invalid username or password.', 'p': 'Please go back to the page and re-enter your username or password.'}), 401
     
 @login_bp.route('/login')
-def login_page():
+def login():
     return render_template('./auth/login.php')
