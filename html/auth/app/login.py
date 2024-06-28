@@ -10,7 +10,7 @@ from app import User
 
 login_bp = Blueprint('login', __name__)
 
-@login_bp.route('/login', methods=['POST'])
+@login_bp.route('/login_request', methods=['POST'])
 def login():
     username = request.form.get('username')
     password = request.form.get('password')
@@ -28,6 +28,6 @@ def login():
     else:
         return jsonify({'message': 'Invalid username or password.', 'p': 'Please go back to the page and re-enter your username or password.'}), 401
     
-@login_bp.route('/login_page')
+@login_bp.route('/login')
 def login_page():
     return render_template('./auth/login.php')
