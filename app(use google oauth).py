@@ -42,7 +42,7 @@ app.register_blueprint(login_bp)
 app.register_blueprint(pass_reset_bp)
 
 def send_email(to, subject, body):
-    credentials = Credentials.from_authorized_user_file('credentials.json')
+    credentials = Credentials.from_authorized_user_file('****.json') #Your client json file
     service = build('gmail', 'v1', credentials=credentials)
     message = {
         'raw': base64.urlsafe_b64encode(
