@@ -34,7 +34,7 @@ def signup_request():
     db.session.commit()
     token = s.dumps(email, salt='email-confirm')
     confirm_url = url_for('signup_request.confirm_email', token=token, _external=True)
-    #here can change message
+    # here can change message
     html = f'''
     <p>Hi {username},</p>
     <p>Thank you for signing up. Please click the link below to confirm your email address and complete your registration:</p>
