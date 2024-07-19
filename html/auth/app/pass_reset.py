@@ -20,7 +20,7 @@ def reset_password_request():
     if user:
         token = s.dumps(email, salt='password-reset')
         reset_url = url_for('pass_reset.reset_password', token=token, _external=True)
-        #here can change message
+        # here can change message
         html = f'''
         <p>Hi {user.username},</p>
         <p>To reset your password, click the link below:</p>
