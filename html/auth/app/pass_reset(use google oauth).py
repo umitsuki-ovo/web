@@ -19,7 +19,7 @@ def reset_password_request():
     user = User.query.filter_by(email=email).first()
     if user:
         token = s.dumps(email, salt='password-reset')
-        reset_url = url_for('pass_reset.reset_password', token=token, _external=True)
+        reset_url = url_for('pass_reset_request.reset_password', token=token, _external=True)
         # here can change message
         html = f'''
         <p>Hi {user.username},</p>
