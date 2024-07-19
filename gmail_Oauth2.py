@@ -1,3 +1,4 @@
+# https://github.com/googleworkspace/python-samples/blob/main/gmail/quickstart/quickstart.py
 # If you have already completed the authentication, you do not need this file.
 # This file use for gmail Oauth2 only.
 
