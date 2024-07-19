@@ -31,9 +31,11 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'html/auth/app'))
 
 from signup import signup_bp
 from login import login_bp
+from pass_reset import pass_reset_bp
 
 app.register_blueprint(signup_bp)
 app.register_blueprint(login_bp)
+app.register_blueprint(pass_reset_bp)
 
 # if __name__ == '__main__':
 #     app.run(debug=True)
