@@ -27,7 +27,7 @@ def reset_password_request():
         <p><a href="{reset_url}">Reset Password</a></p>
         <p>If you did not request a password reset, please ignore this email.</p>
         '''
-       send_email(email, 'Confirm your account', html)
+        send_email(email, 'Confirm your account', html)
     return jsonify({'message': 'If your email is registered, you will receive a password reset link.'}), 200
 
 @pass_reset_bp.route('/reset_password/<token>', methods=['GET', 'POST'])
