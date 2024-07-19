@@ -7,7 +7,7 @@ import os
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '../../../..'))
 
-from flask_app import app, db, User, send_email
+from app import app, db, User, send_email
 
 signup_bp = Blueprint('signup', __name__)
 s = URLSafeTimedSerializer(app.config['SECRET_KEY'])
