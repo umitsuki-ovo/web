@@ -20,17 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     if ($result === FALSE) { 
         echo 'Error connecting to server.';
-    } else {
-        $response = json_decode($result, true);
-        if (isset($response['message'])) {
-            echo $response['message'];
-            if (isset($response['redirect_url'])) {
-                echo '<script>';
-                echo 'setTimeout(function() { window.location.href = "' . $response['redirect_url'] . '"; }, 10000);';
-                echo '</script>';
-                exit();
-            }
-        }
     }
 }
 ?>
