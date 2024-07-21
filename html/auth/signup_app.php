@@ -22,9 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     if ($result === FALSE) { 
         echo 'Error connecting to server.';
-    } else {
-        $response = json_decode($result, true);
-        echo $response['message'];
     }
 }
 ?>
