@@ -1,18 +1,11 @@
-<?php
-session_start();
-
-// dummy
-$_SESSION['username'] = 'example_user';
-?>
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Main Page</title>
-    <link rel="stylesheet" href="../root.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="root.css">
+    <link rel="stylesheet" href="./user/styles.css">
     <script>
         function toggleUserMenu() {
             const userMenu = document.getElementById('user-menu');
@@ -39,7 +32,7 @@ $_SESSION['username'] = 'example_user';
     <div class="login" onclick="toggleUserMenu()">
         <?php echo htmlspecialchars($_SESSION['username']); ?>
         <div id="user-menu" class="user-menu">
-            <a href="../auth/logout.php">ログアウト</a>
+            <a href="./logout">ログアウト</a>
         </div>
     </div>
 </header>
