@@ -20,10 +20,10 @@ def login_request():
             session['user_id'] = user.id
             session['role'] = user.role
             if user.role == 'admin':
-                json = {'message': 'Login successful.', 'p': 'Redirect user page. Wait a minute.', 'redirect_url': '../../admin/admin_index.php'}
+                json = {'message': 'Login successful.', 'p': 'Redirect user page. Wait a minute.', 'redirect_url': url_for('user_index', username=username)}
                 return render_template('./redirect_page/correct.html', json=json)
             else:
-                json = {'message': 'Login successful.', 'p': 'Redirect user page. Wait a minute.', 'redirect_url': '../../user/user_index.php'}
+                json = {'message': 'Login successful.', 'p': 'Redirect user page. Wait a minute.', 'redirect_url': url_for('user_index', username=username)}
                 return render_template('./redirect_page/correct.html', json=json)
         else:
             json = {'message': 'Please confirm your email address.', 'p': 'Please go back to the page and re-enter your email address.'}
