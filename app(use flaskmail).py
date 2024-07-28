@@ -40,6 +40,10 @@ def user_index(username):
         return f'Welcome to {username}\'s index page!'
     else:
         return redirect(url_for('run'))
+
+@app.route('/logout')
+def logout():
+    return render_template('./auth/logout.php')
         
 
 sys.path.append(os.path.join(os.path.dirname(__file__), 'html/auth/app'))
