@@ -20,14 +20,18 @@ def login_request():
             session['user_id'] = user.id
             session['role'] = user.role
             if user.role == 'admin':
-                return jsonify({'message': 'Login successful.', 'p': 'Redirect user page. Wait a minute.', 'redirect_url': '../../admin/admin_index.php'}), 200
+                json = {'message': 'Login successful.', 'p': 'Redirect user page. Wait a minute.', 'redirect_url': '../../admin/admin_index.php'}
+                return render_template('./redirect_page/correct.html', json=json)
             else:
-                return jsonify({'message': 'Login successful.', 'p': 'Redirect user page. Wait a minute.', 'redirect_url': '../../user/user_index.php'}), 200
+                json = {'message': 'Login successful.', 'p': 'Redirect user page. Wait a minute.', 'redirect_url': '../../user/user_index.php'}
+                return render_template('./redirect_page/correct.html', json=json)
         else:
-            return jsonify({'message': 'Please confirm your email address.', 'p': 'Please go back to the page and re-enter your email address.'}), 401
+            json = {'message': 'Please confirm your email address.', 'p': 'Please go back to the page and re-enter your email address.'}
+            return render_template('./redirect_page/error.html', json=json)
     else:
-        return jsonify({'message': 'Invalid username or password.', 'p': 'Please go back to the page and re-enter your username or password.'}), 401
-    
+        json = {'message': 'Invalid username or password.', 'p': 'Please go back to the page and re-enter your username or password.'}
+        return render_template('./redirect_page/error.html', json=json)
+
 @login_bp.route('/login')
 def login():
     return render_template('./auth/login.php')
