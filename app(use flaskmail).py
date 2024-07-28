@@ -32,6 +32,16 @@ def create_tables():
 def run():
     return render_template('index.html')
 
+@app.route('/<username>/index')
+def user_index(username):
+    if 'user_id' in session and session.get('role') == 'admin':
+        return 'Welcome to admin index page!'
+    elif 'user_id' in session and User.query.filter_by(username=username).first().id == session['user_id']:
+        return f'Welcome to {username}\'s index page!'
+    else:
+        return redirect(url_for('run'))
+        
+
 sys.path.append(os.path.join(os.path.dirname(__file__), 'html/auth/app'))
 
 from signup import signup_bp
