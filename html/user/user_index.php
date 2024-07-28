@@ -32,7 +32,7 @@
     <div class="login" onclick="toggleUserMenu()">
         <?php echo htmlspecialchars($_SESSION['username']); ?>
         <div id="user-menu" class="user-menu">
-            <a href="./logout">ログアウト</a>
+            <a href="../logout">ログアウト</a>
         </div>
     </div>
 </header>
