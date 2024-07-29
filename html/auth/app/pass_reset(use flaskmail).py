@@ -8,7 +8,6 @@ import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '../../../..'))
 
 from app import app, db, mail, User
-from utils import send_email
 
 pass_reset_bp = Blueprint('pass_reset', __name__)
 s = URLSafeTimedSerializer(app.config['SECRET_KEY'])
@@ -29,7 +28,9 @@ def reset_password_request():
         <p><a href="{reset_url}">Reset Password</a></p>
         <p>If you did not request a password reset, please ignore this email.</p>
         '''
-        send_email(email, 'Confirm your account', html)
+        msg = Message('Password Reset Request', sender=os.environ.get('MAIL_USERNAME'), recipients=[email])
+        msg.html = html
+        mail.send(msg)
     json = {'message': 'Cheack your mail.', 'p': 'If your email is registered, you will receive a password reset link.'}
     return render_template('./redirect_page/correct.html', json=json)
 
