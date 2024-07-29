@@ -53,7 +53,8 @@ def signup_request():
     <p>If you did not sign up for this account, please ignore this email.</p>
     '''
     send_email(email, 'Confirm your account', html)
-    return jsonify({'message': 'A confirmation email has been sent.'}), 201
+    json = {'message': 'Please confirm your account.', 'p': 'A confirmation email has been sent.', 'redirect_url': './'}
+    return render_template('./redirect_page/correct.html', json=json)
 
 # Confirm app
 @signup_bp.route('/confirm_email/<token>')
