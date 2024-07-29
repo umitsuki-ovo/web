@@ -10,11 +10,13 @@ from app import User
 
 login_bp = Blueprint('login_request', __name__)
 
+# Login app
 @login_bp.route('/login_request', methods=['POST'])
 def login_request():
     username = request.form.get('username')
     password = request.form.get('password')
     user = User.query.filter_by(username=username).first()
+    
     if user and check_password_hash(user.password_hash, password):
         if user.confirmed:
             session['user_id'] = user.id
@@ -32,6 +34,7 @@ def login_request():
         json = {'message': 'Invalid username or password.', 'p': 'Please go back to the page and re-enter your username or password.'}
         return render_template('./redirect_page/error.html', json=json)
 
+# SLogin page
 @login_bp.route('/login')
 def login():
     return render_template('./auth/login.php')
