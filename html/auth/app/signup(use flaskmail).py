@@ -72,7 +72,7 @@ def confirm_email(token):
         user.confirmed = True
         db.session.add(user)
         db.session.commit()
-        json = {'message': 'Confirmation successful.', 'p': 'You have confirmed your account. Thanks!', 'redirect_url': 'https://mia33501.pythonanywhere.com/login'}
+        json = {'message': 'Confirmation successful.', 'p': 'You have confirmed your account. Thanks!', 'redirect_url': 'https://****.com/login'}
         return render_template('./redirect_page/correct.html', json=json)
 
 # Signup page
