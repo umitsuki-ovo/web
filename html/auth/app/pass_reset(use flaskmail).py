@@ -31,7 +31,7 @@ def reset_password_request():
         msg = Message('Password Reset Request', sender=os.environ.get('MAIL_USERNAME'), recipients=[email])
         msg.html = html
         mail.send(msg)
-    json = {'message': 'Cheack your mail.', 'p': 'If your email is registered, you will receive a password reset link.'}
+    json = {'message': 'Cheack your mail.', 'p': 'If your email is registered, you will receive a password reset link.', 'redirect_url': './'}
     return render_template('./redirect_page/correct.html', json=json)
 
 # Reset page
@@ -51,7 +51,7 @@ def reset_password(token):
         user = User.query.filter_by(email=email).first_or_404()
         user.password_hash = generate_password_hash(password)
         db.session.commit()
-        json = {'message': 'Your password has been reset.', 'p': 'You can login new passwords.'}
+        json = {'message': 'Your password has been reset.', 'p': 'You can login new passwords.', 'redirect_url': './login'}
         return render_template('./redirect_page/correct.html', json=json)
     return render_template('./auth/reset_password_request.php')
 
