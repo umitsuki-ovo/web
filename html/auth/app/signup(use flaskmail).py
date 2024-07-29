@@ -7,8 +7,7 @@ import os
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '../../../..'))
 
-from app import app, db, User
-from utils import send_email
+from app import app, db, mail, User
 
 signup_bp = Blueprint('signup_request', __name__)
 s = URLSafeTimedSerializer(app.config['SECRET_KEY'])
