@@ -51,7 +51,9 @@ def signup_request():
     <p><a href="{confirm_url}">Confirm your email address</a></p>
     <p>If you did not sign up for this account, please ignore this email.</p>
     '''
-    send_email(email, 'Confirm your account', html)
+    msg = Message('Password Reset Request', sender=os.environ.get('MAIL_USERNAME'), recipients=[email])
+    msg.html = html
+    mail.send(msg)
     json = {'message': 'Please confirm your account.', 'p': 'A confirmation email has been sent.', 'redirect_url': './'}
     return render_template('./redirect_page/correct.html', json=json)
 
