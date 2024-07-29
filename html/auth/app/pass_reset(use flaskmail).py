@@ -34,6 +34,7 @@ def reset_password_request():
     json = {'message': 'Cheack your mail.', 'p': 'If your email is registered, you will receive a password reset link.'}
     return render_template('./redirect_page/correct.html', json=json)
 
+# Reset page
 @pass_reset_bp.route('/reset_password/<token>', methods=['GET', 'POST'])
 def reset_password(token):
     try:
@@ -54,7 +55,7 @@ def reset_password(token):
         return render_template('./redirect_page/correct.html', json=json)
     return render_template('./auth/reset_password_request.php')
 
-# Reset page
+# Mail page
 @pass_reset_bp.route('/pass_reset')
 def pass_reset():
     return render_template('./auth/reset_password_request.php')
