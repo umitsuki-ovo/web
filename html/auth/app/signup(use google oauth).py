@@ -13,28 +13,39 @@ from utils import send_email
 signup_bp = Blueprint('signup_request', __name__)
 s = URLSafeTimedSerializer(app.config['SECRET_KEY'])
 
+# Signup app
 @signup_bp.route('/signup_request', methods=['POST'])
 def signup_request():
     username = request.form.get('username')
     email = request.form.get('email')
     password = request.form.get('password')
+
     if not re.match(r'^[a-zA-Z0-9_]{3,150}$', username):
-        return jsonify({'message': 'Invalid username. Must be 3-150 characters and contain only letters, numbers, and underscores.'}), 400
+        json = {'message': 'Invalid username.', 'p': 'Invalid username. Must be 3-150 characters and contain only letters, numbers, and underscores.'}
+        return render_template('./redirect_page/error.html', json=json)
     if not re.match(r'^[A-Za-z0-9@#$%^&+=]{8,}$', password):
-        return jsonify({'message': 'Password must be at least 8 characters long and contain letters, numbers, and special characters.'}), 400
+        json = {'message': 'Re-enter the password.', 'p': 'Password must be at least 8 characters long and contain letters, numbers, and special characters.'}
+        return render_template('./redirect_page/error.html', json=json)
     if not re.match(r'^[^@]+@[^@]+\.[^@]+$', email):
-        return jsonify({'message': 'Invalid email address.'}), 400
+        json = {'message': 'Invalid email address.', 'p': 'Please enter a valid email address.'}
+        return render_template('./redirect_page/error.html', json=json)
     if User.query.filter_by(username=username).first() is not None:
-        return jsonify({'message': 'Username already exists.'}), 400
+        json = {'message': 'Username already exists.', 'p': 'Please enter another username.'}
+        return render_template('./redirect_page/error.html', json=json)
     if User.query.filter_by(email=email).first() is not None:
-        return jsonify({'message': 'Email already registered.'}), 400
+        json = {'message': 'Email already registered.', 'p': 'Email already registered. You can login your account.'}
+        return render_template('./redirect_page/error.html', json=json)
+    
+    # Add date to db
     password_hash = generate_password_hash(password)
     new_user = User(username=username, email=email, password_hash=password_hash, role='user')
     db.session.add(new_user)
     db.session.commit()
+
+    # Create confirm mail
     token = s.dumps(email, salt='email-confirm')
     confirm_url = url_for('signup_request.confirm_email', token=token, _external=True)
-    # here can change message
+    # Here can change message
     html = f'''
     <p>Hi {username},</p>
     <p>Thank you for signing up. Please click the link below to confirm your email address and complete your registration:</p>
@@ -44,6 +55,7 @@ def signup_request():
     send_email(email, 'Confirm your account', html)
     return jsonify({'message': 'A confirmation email has been sent.'}), 201
 
+# Confirm app
 @signup_bp.route('/confirm_email/<token>')
 def confirm_email(token):
     try:
@@ -59,6 +71,7 @@ def confirm_email(token):
         db.session.commit()
         return jsonify({'message': 'You have confirmed your account. Thanks!'}), 200
 
+# Signup page
 @signup_bp.route('/signup')
 def signup():
     return render_template('./auth/signup.php')
