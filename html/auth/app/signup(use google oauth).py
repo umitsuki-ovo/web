@@ -61,15 +61,18 @@ def confirm_email(token):
     try:
         email = s.loads(token, salt='email-confirm', max_age=3600)
     except:
-        return jsonify({'message': 'The confirmation link is invalid or has expired.'}), 400
+        json = {'message': 'Confirmation link error.', 'p': 'The confirmation link is invalid or has expired. Please signup one more time.'}
+        return render_template('./redirect_page/error.html', json=json)
     user = User.query.filter_by(email=email).first_or_404()
     if user.confirmed:
-        return jsonify({'message': 'Account already confirmed. Please login.'}), 200
+        json = {'message': 'You are already confirmed.', 'p': 'Account already confirmed. Please login.'}
+        return render_template('./redirect_page/error.html', json=json)
     else:
         user.confirmed = True
         db.session.add(user)
         db.session.commit()
-        return jsonify({'message': 'You have confirmed your account. Thanks!'}), 200
+        json = {'message': 'Confirmation successful.', 'p': 'You have confirmed your account. Thanks!', 'redirect_url': 'https://****.com/login'}
+        return render_template('./redirect_page/correct.html', json=json)
 
 # Signup page
 @signup_bp.route('/signup')
