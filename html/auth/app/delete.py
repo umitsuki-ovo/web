@@ -12,9 +12,8 @@ delete_bp = Blueprint('delete_user_request', __name__)
 # Delete app
 @delete_bp.route('/delete_user_request', methods=['POST'])
 def delete_user_request():
-    data = request.get_json()
-    username = data.get('username')
-    password = data.get('password')
+    username = request.form.get('username')
+    password = request.form.get('password')
 
     user = User.query.filter_by(username=username).first()
     if user and check_password_hash(user.password_hash, password):
