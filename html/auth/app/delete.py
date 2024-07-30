@@ -29,6 +29,6 @@ def delete_user_request():
         return render_template('./redirect_page/error.html', json=json)
     
 # Delete page
-@delete_bp.route('/delete_user', methods=['POST'])
+@delete_bp.route('/delete_user')
 def delete_user():
     return render_template('index.html')
