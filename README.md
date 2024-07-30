@@ -15,8 +15,6 @@
 
 - ユーザー削除時のメール送信
 
-- destroy.phpのテンプレ化
-
 - エラーページの作成
 
 - ログアウト時のログインページのリダイレクト(render_templateでcorrect.htmlの読み込み)
