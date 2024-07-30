@@ -1,7 +1,6 @@
 from flask import Blueprint, request, jsonify, url_for, render_template_string, render_template
 from werkzeug.security import generate_password_hash
 from itsdangerous import URLSafeTimedSerializer
-from flask_mail import Message
 import sys
 import os
 
