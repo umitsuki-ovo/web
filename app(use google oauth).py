@@ -8,6 +8,7 @@ import os
 app = Flask(__name__, static_folder='html', template_folder='html')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SECRET_KEY'] = secrets.token_hex(16)
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['OAUTHLIB_INSECURE_TRANSPORT'] = '1' #Only for testing
 
 db = SQLAlchemy(app)
