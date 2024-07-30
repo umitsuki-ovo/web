@@ -31,4 +31,4 @@ def delete_user_request():
 # Delete page
 @delete_bp.route('/delete_user')
 def delete_user():
-    return render_template('index.html')
+    return render_template('./auth/destroy.php')
