@@ -55,7 +55,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'html/auth/app'))
 from signup import signup_bp
 from login import login_bp
 from pass_reset import pass_reset_bp
-from change_bp import change_bp
+from role_change import change_bp
 from delete import delete_bp
 
 app.register_blueprint(signup_bp)
